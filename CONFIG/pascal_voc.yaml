@@ -1,0 +1,11 @@
+train: ../clothing/images/train/
+val: ../clothing/images/val/
+
+nc: 21
+
+names:
+  [
+	'background', 'person', 'bird', 'cat', 'cow', 'dog', 'horse', 'sheep',
+	'aeroplane', 'bicycle', 'boat', 'bus', 'car', 'motorbike', 'train',
+	'bottle', 'chair', 'diningtable', 'pottedplant', 'sofa', 'tvmonitor'
+  ]
