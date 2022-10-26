@@ -163,14 +163,14 @@ def parse_model(md, ch):  # model_dict, input_channels(3)
                 pass
               
         # CUSTOM PRINT  
-        print(args)
+        # print(args)
 
         n = max(round(n * gd), 1) if n > 1 else n  # depth gain
         if m in [nn.Conv2d, Conv, Bottleneck, SPP, DWConv, MixConv2d, Focus, ConvPlus, BottleneckCSP]:
             c1, c2 = ch[f], args[0]
             
             # CUSTOM PRINT
-            print(f"c1: {c1}, c2: {c2}, gw: {gw}, na: {na}, nc: {nc}, no: {no}")
+            # print(f"c1: {c1}, c2: {c2}, gw: {gw}, na: {na}, nc: {nc}, no: {no}")
 
             # Normal
             # if i > 0 and args[0] != no:  # channel expansion factor
@@ -181,7 +181,7 @@ def parse_model(md, ch):  # model_dict, input_channels(3)
             c2 = make_divisible(c2 * gw, 8) if c2 != no else c2
             
             # CUSTOM PRINT
-            print(c2)
+            # print(c2)
 
             # Experimental
             # if i > 0 and args[0] != no:  # channel expansion factor
