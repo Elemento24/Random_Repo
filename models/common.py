@@ -14,7 +14,9 @@ class Conv(nn.Module):
     def __init__(self, c1, c2, k=1, s=1, g=1, act=True):  # ch_in, ch_out, kernel, stride, groups
         super(Conv, self).__init__()
         
-        print(c1, c2, k, s, k // 2, g)
+        # CUSTOM PRINT
+        print("Conv Layer:")
+        print(f"c1: {c1}, c2: {c2}, g: {g}")
         
         self.conv = nn.Conv2d(c1, c2, k, s, k // 2, groups=g, bias=False)
         self.bn = nn.BatchNorm2d(c2)

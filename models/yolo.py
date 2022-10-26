@@ -56,8 +56,8 @@ class Model(nn.Module):
             self.md['nc'] = nc  # override yaml value
         
         # CUSTOM PRINT
-        print(model_cfg)
-        print(self.md['nc'])
+        # print(model_cfg)
+        # print(self.md['nc'])
             
         self.model, self.save = parse_model(self.md, ch=[ch])  # model, savelist, ch_out
         # print([x.shape for x in self.forward(torch.zeros(1, ch, 64, 64))])
