@@ -879,7 +879,7 @@ def output_to_target(output, width, height):
     """
     
     # CUSTOM PRINT
-    print(type(output))
+    print("Output Type:", type(output))
 
     if isinstance(output, torch.Tensor):
         output = output.cpu().numpy()
@@ -896,10 +896,16 @@ def output_to_target(output, width, height):
                 conf = pred[4]
                 cls = int(pred[5])
 
-                print(type(i), type(cls), type(x), type(y), type(w), type(h), type(conf))
+                w = w.cpu().numpy()
+                h = h.cpu().numpy()
+                x = x.cpu().numpy()
+                y = y.cpu().numpy()
+                conf = conf.cpu().numpy()
+                
+                # print(type(i), type(cls), type(x), type(y), type(w), type(h), type(conf))
                 targets.append([i, cls, x, y, w, h, conf])
                 
-    print(type(targets))
+    # print(type(targets))
     # t = np.array([tar.cpu() for tar in targets])
 
     return np.array(targets)
