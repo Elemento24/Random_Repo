@@ -877,6 +877,10 @@ def output_to_target(output, width, height):
     Convert a YOLO model output to target format
     [batch_id, class_id, x, y, w, h, conf]
     """
+    
+    # CUSTOM PRINT
+    print(type(output))
+
     if isinstance(output, torch.Tensor):
         output = output.cpu().numpy()
 
@@ -892,9 +896,14 @@ def output_to_target(output, width, height):
                 conf = pred[4]
                 cls = int(pred[5])
 
+                print(type(i), type(cls), type(x), type(y), type(w), type(h), type(conf))
                 targets.append([i, cls, x, y, w, h, conf])
+                
+    print(type(targets))
+    # t = np.array([tar.cpu() for tar in targets])
 
     return np.array(targets)
+    # return np.array(targets)
 
 
 # Plotting functions ---------------------------------------------------------------------------------------------------
